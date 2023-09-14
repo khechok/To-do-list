@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>To-do-list</title>
+</head>
+
+<body>
+   <input type="text" id="todo-list" />
+   <button onclick="addToo()">Add here!</button>
+   <div id="list"></div>
+
+   <script>
+      let todo = ['Get groceries', 'wash car', 'make diiner']
+
+      render()
+
+      function addToo() {
+         let button = document.getElementById('todo-list')
+         let title = button.value;
+         todo.push(title);
+
+         render()
+      }
+
+      function render() {
+         document.getElementById("list").innerHTML = '';
+
+         todo.forEach((title) => {
+            let element = document.createElement('div');
+            element.innerText = title;
+            let todolist = document.getElementById('list');
+            todolist.appendChild(element);
+         });
+
+      }
+
+   </script>
+
+</body>
+
+</html>
